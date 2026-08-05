@@ -9,9 +9,9 @@ class Solution:
             for c in range(cols):
                 if matrix[r][c] == "1":
                     dp[r+1][c+1] = min(
+                        dp[r][c],
                         dp[r][c+1],
-                        dp[r+1][c],
-                        dp[r][c]
+                        dp[r+1][c]
                     ) + 1
-                    max_side = max(max_side, dp[r+1][c+1])
+                max_side = max(max_side, dp[r+1][c+1])
         return max_side * max_side
