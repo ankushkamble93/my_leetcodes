@@ -9,9 +9,8 @@ class Solution:
                 if val == ".":
                     continue
                 box_key = (r//3, c//3)
-                if (val in rows[r]
-                 or val in cols[c]
-                 or val in boxes[box_key]):
+                if (val in rows[r] or 
+                val in cols[c] or val in boxes[box_key]):
                     return False
                 rows[r].add(val)
                 cols[c].add(val)
