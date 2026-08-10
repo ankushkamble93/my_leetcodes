@@ -9,8 +9,8 @@ class Solution:
                 while stack[-1] != "[":
                     subs = stack.pop() + subs
                 stack.pop()
-                k = ""
+                integer = ""
                 while stack and stack[-1].isdigit():
-                    k = stack.pop() + k
-                stack.append(int(k) * subs)
+                    integer = stack.pop() + integer
+                stack.append(int(integer) * subs)
         return "".join(stack)
