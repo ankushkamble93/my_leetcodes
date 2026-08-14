@@ -5,7 +5,7 @@ class Solution:
         for right in range(len(nums)):
             total += nums[right]
             while total >= target:
-                res = min(res, right-left+1)
                 total -= nums[left]
+                res = min(res, right-left+1)
                 left+=1
         return res if res != float("inf") else 0
