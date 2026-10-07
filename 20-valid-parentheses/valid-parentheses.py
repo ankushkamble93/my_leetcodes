@@ -5,11 +5,11 @@ class Solution:
         stack = []
         
         for char in s:
-            if char in close_to_open:
-                top_element = stack.pop() if stack else "#"
-                if close_to_open[char] != top_element:
-                    return False
-            else:
+            if char in close_to_open.values():
                 stack.append(char)
+            elif char in close_to_open:
+                if not stack or stack.pop() != close_to_open[char]:
+                    return False
         return len(stack) == 0
+
                 
